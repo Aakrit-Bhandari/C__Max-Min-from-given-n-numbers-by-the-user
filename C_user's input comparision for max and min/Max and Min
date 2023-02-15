@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int trigger(int n)
+{
+    int s[n];
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &s[i]);
+    }
+    int max = s[0];
+    int min = s[0];
+    for (int i = 0; i < n; i++)
+    {
+        int a = s[i];
+        for (int j = 0; j < n; j++)
+        {
+            int b = s[j];
+            if (a > b)
+            {
+                if (a > max)
+                {
+                    max = a;
+                }
+            }
+            if (b < a)
+            {
+                if (b < min)
+                {
+                    min = b;
+                }
+            }
+        }
+    }
+    printf("Max %d\n", max);
+    printf("Min %d", min);
+}
+int main(void)
+{
+    printf("_______________COMPARING N NUMBERS_____________\n");
+    int c;
+    printf("Enter total numbers:");
+    scanf("%d", &c);
+    trigger(c);
+}
